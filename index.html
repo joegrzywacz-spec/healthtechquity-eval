@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Health TechQuity 2026 — Conference Evaluation</title>
+<style>
+/* ── Reset & Base ─────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f1f3f4;
+  color: #202124;
+  min-height: 100vh;
+  padding: 20px 16px 60px;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);
+}
+
+/* ── Progress Bar ─────────────────────────────────────────────────────────── */
+.progress-bar { height: 6px; background: #e0e0e0; }
+.progress-fill { height: 100%; background: #1a73e8; transition: width .4s ease; }
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.card-header { background: #1a73e8; color: #fff; padding: 22px 28px; }
+.card-header h1 { font-size: 1.35rem; font-weight: 600; margin-bottom: 3px; }
+.card-header p  { font-size: 0.875rem; opacity: .9; line-height: 1.5; }
+
+/* ── Steps ───────────────────────────────────────────────────────────────── */
+.step { display: none; padding: 26px 28px; }
+.step.active { display: block; }
+
+.step-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #202124;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #1a73e8;
+  margin-bottom: 6px;
+}
+.step-subtitle {
+  font-size: 0.85rem;
+  color: #5f6368;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ── Questions ───────────────────────────────────────────────────────────── */
+.question { margin-bottom: 22px; }
+.q-label {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #202124;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+.req { color: #d93025; }
+
+/* ── Radio & Checkbox Options ────────────────────────────────────────────── */
+.options { display: flex; flex-direction: column; gap: 6px; }
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background .15s;
+}
+.option:hover { background: #f8f9fa; }
+.option input[type=radio],
+.option input[type=checkbox] {
+  accent-color: #1a73e8;
+  width: 16px; height: 16px;
+  cursor: pointer; flex-shrink: 0;
+}
+
+/* ── 5-Point Rating Scale ────────────────────────────────────────────────── */
+.scale-wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.scale-lo, .scale-hi { font-size: 0.78rem; color: #5f6368; white-space: nowrap; }
+.scale-btns { display: flex; gap: 6px; }
+.scale-btn { position: relative; cursor: pointer; }
+.scale-btn input { position: absolute; opacity: 0; width: 0; height: 0; }
+.scale-btn span {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border: 2px solid #dadce0; border-radius: 50%;
+  font-size: 0.875rem; font-weight: 600; color: #5f6368;
+  transition: all .15s;
+}
+.scale-btn:hover span      { border-color: #1a73e8; color: #1a73e8; background: #e8f0fe; }
+.scale-btn input:checked + span { background: #1a73e8; border-color: #1a73e8; color: #fff; }
+
+/* ── Textarea ────────────────────────────────────────────────────────────── */
+textarea {
+  width: 100%; min-height: 80px; padding: 10px 12px;
+  border: 1px solid #dadce0; border-radius: 4px;
+  font-family: inherit; font-size: 0.9rem; color: #202124;
+  resize: vertical; line-height: 1.5; transition: border-color .15s;
+}
+textarea:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,.2); }
+
+/* ── Validation ──────────────────────────────────────────────────────────── */
+.error-msg { color: #d93025; font-size: 0.8rem; margin-top: 5px; display: none; }
+.question.has-error .error-msg { display: block; }
+.question.has-error .scale-btns .scale-btn span { border-color: #f28b82; }
+
+/* ── Session Checkboxes (Step 3) ─────────────────────────────────────────── */
+.session-chk {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 12px;
+  border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 8px;
+  cursor: pointer; transition: border-color .15s, background .15s;
+}
+.session-chk:hover { border-color: #1a73e8; background: #f8f9fa; }
+.session-chk input[type=checkbox] {
+  accent-color: #1a73e8;
+  width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0; cursor: pointer;
+}
+.session-chk .s-meta   { flex: 1; }
+.session-chk .s-day    { font-size: 0.75rem; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }
+.session-chk .s-label  { font-size: 0.78rem; color: #5f6368; margin-bottom: 2px; }
+.session-chk .s-title  { font-size: 0.9rem; color: #202124; font-weight: 500; }
+.day-divider { font-size: 0.75rem; font-weight: 700; color: #5f6368; text-transform: uppercase; letter-spacing: .08em; margin: 14px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e0; }
+
+/* ── Session Banner (in eval steps) ─────────────────────────────────────── */
+.session-banner {
+  background: #e8f0fe; border-left: 4px solid #1a73e8;
+  border-radius: 0 6px 6px 0; padding: 12px 16px; margin-bottom: 22px;
+}
+.session-banner .sb-num   { font-size: 0.72rem; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }
+.session-banner .sb-label { font-size: 0.78rem; color: #5f6368; margin-bottom: 3px; }
+.session-banner .sb-title { font-size: 0.975rem; font-weight: 600; color: #202124; }
+
+/* ── Notice Box ──────────────────────────────────────────────────────────── */
+.notice {
+  background: #fef7e0; border: 1px solid #fdd663; border-radius: 6px;
+  padding: 10px 14px; font-size: 0.84rem; color: #7a5f00;
+  margin-bottom: 18px; line-height: 1.5;
+}
+
+/* ── Navigation Row ──────────────────────────────────────────────────────── */
+.nav-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 28px 22px;
+  border-top: 1px solid #e8eaed;
+}
+.btn {
+  padding: 10px 22px; border-radius: 4px; border: none;
+  font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all .15s;
+}
+.btn-primary { background: #1a73e8; color: #fff; }
+.btn-primary:hover:not(:disabled) { background: #1765cc; box-shadow: 0 1px 3px rgba(0,0,0,.2); }
+.btn-secondary { background: transparent; color: #1a73e8; border: 1px solid #dadce0; }
+.btn-secondary:hover:not(:disabled) { background: #f1f3f4; }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.step-counter { font-size: 0.8rem; color: #5f6368; }
+
+/* ── Welcome & Thank-You Screens ─────────────────────────────────────────── */
+.welcome { text-align: center; padding: 12px 0; }
+.welcome .conf-title { font-size: 1.45rem; font-weight: 700; color: #1a73e8; margin-bottom: 6px; }
+.welcome .conf-sub   { color: #5f6368; font-size: 0.875rem; margin-bottom: 22px; }
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 20px; text-align: left; }
+.info-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; }
+.info-card .ic-icon  { font-size: 1.3rem; margin-bottom: 4px; }
+.info-card .ic-label { font-size: 0.72rem; color: #5f6368; text-transform: uppercase; letter-spacing: .04em; }
+.info-card .ic-val   { font-size: 0.9rem; font-weight: 600; color: #202124; }
+.welcome-note { font-size: 0.84rem; color: #5f6368; line-height: 1.6; margin-bottom: 8px; }
+
+.thanks { text-align: center; padding: 28px 10px; }
+.thanks .check { font-size: 3rem; margin-bottom: 14px; }
+.thanks h2 { font-size: 1.35rem; color: #1a73e8; margin-bottom: 8px; }
+.thanks p  { color: #5f6368; font-size: 0.875rem; line-height: 1.65; max-width: 420px; margin: 0 auto; }
+
+/* ── Spinner ─────────────────────────────────────────────────────────────── */
+.spinner {
+  display: inline-block; width: 20px; height: 20px;
+  border: 3px solid rgba(255,255,255,.4); border-top-color: #fff;
+  border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 6px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Contact Info Panel ──────────────────────────────────────────────────── */
+.contact-privacy-notice {
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  border-radius: 6px;
+  padding: 13px 16px;
+  margin-bottom: 18px;
+  font-size: 0.875rem;
+  color: #1b5e20;
+  line-height: 1.55;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.contact-privacy-notice .pn-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }
+.contact-privacy-notice strong { display: block; margin-bottom: 2px; font-size: 0.9rem; }
+.contact-fields { display: flex; flex-direction: column; gap: 14px; }
+.contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.text-input {
+  width: 100%; padding: 9px 12px;
+  border: 1px solid #dadce0; border-radius: 4px;
+  font-family: inherit; font-size: 0.9rem; color: #202124;
+  transition: border-color .15s; margin-top: 6px;
+}
+.text-input:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,.2); }
+.text-input.input-error { border-color: #d93025; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 500px) {
+  .step { padding: 20px 16px; }
+  .nav-row { padding: 14px 16px 18px; }
+  .card-header { padding: 18px 16px; }
+  .scale-btn span { width: 35px; height: 35px; font-size: 0.8rem; }
+  .info-grid { grid-template-columns: 1fr; }
+  .contact-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Progress Bar -->
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+
+  <!-- Header -->
+  <div class="card-header">
+    <h1>Health TechQuity 2026</h1>
+    <p>Conference Evaluation &nbsp;·&nbsp; Behavioral Health in the Age of Emerging Technology</p>
+  </div>
+
+  <!-- ══ STEP 0: Welcome ══════════════════════════════════════════════════ -->
+  <div class="step active" id="step-0">
+    <div class="welcome">
+      <div class="conf-title">Thank You for Attending!</div>
+      <div class="conf-sub">March 4–5, 2026 &nbsp;|&nbsp; San José State University</div>
+      <div class="info-grid">
+        <div class="info-card"><div class="ic-icon">⏱</div><div class="ic-label">Estimated time</div><div class="ic-val">5–8 minutes</div></div>
+        <div class="info-card"><div class="ic-icon">📋</div><div class="ic-label">Session evaluations</div><div class="ic-val">Up to 3 sessions</div></div>
+      </div>
+      <p class="welcome-note">
+        We'll ask about your overall conference experience, then ask you to select which sessions you attended.
+        If you attended more than 3 sessions, we'll randomly select 3 for deeper feedback — ensuring we capture input across all sessions, including Day 2.
+        Responses are anonymous.
+      </p>
+    </div>
+  </div>
+
+  <!-- ══ STEP 1: About You ════════════════════════════════════════════════ -->
+  <div class="step" id="step-1">
+    <div class="step-title">About You</div>
+    <div class="step-subtitle">A couple of quick questions to help us understand our audience.</div>
+
+    <div class="question" id="q-role">
+      <label class="q-label">Which best describes your primary professional role?</label>
+      <div class="options">
+        <label class="option"><input type="radio" name="role" value="Faculty / Staff"> Faculty / Staff</label>
+        <label class="option"><input type="radio" name="role" value="Healthcare Provider / Clinician"> Healthcare Provider / Clinician</label>
+        <label class="option"><input type="radio" name="role" value="Technology Developer / Innovator"> Technology Developer / Innovator</label>
+        <label class="option"><input type="radio" name="role" value="Policy Maker / Government"> Policy Maker / Government</label>
+        <label class="option"><input type="radio" name="role" value="Community Organization / Nonprofit"> Community Organization / Nonprofit</label>
+        <label class="option"><input type="radio" name="role" value="Student"> Student</label>
+        <label class="option"><input type="radio" name="role" value="Industry / Corporate"> Industry / Corporate</label>
+        <label class="option"><input type="radio" name="role" value="Other"> Other</label>
+      </div>
+    </div>
+
+    <div class="question" id="q-days">
+      <label class="q-label">Which day(s) did you attend? <span class="req">*</span></label>
+      <div class="options">
+        <label class="option"><input type="radio" name="daysAttended" value="Day 1 only (March 4)"> Day 1 only (March 4)</label>
+        <label class="option"><input type="radio" name="daysAttended" value="Day 2 only (March 5)"> Day 2 only (March 5)</label>
+        <label class="option"><input type="radio" name="daysAttended" value="Both days (March 4 &amp; 5)"> Both days (March 4 &amp; 5)</label>
+      </div>
+      <div class="error-msg">Please select which day(s) you attended.</div>
+    </div>
+  </div>
+
+  <!-- ══ STEP 2: Overall Conference ═══════════════════════════════════════ -->
+  <div class="step" id="step-2">
+    <div class="step-title">Overall Conference Feedback</div>
+    <div class="step-subtitle">Please rate the following aspects of Health TechQuity 2026 overall. Questions marked with a <span style="color:#d93025;font-weight:600;">*</span> are required.</div>
+
+    <div class="question" id="q-overall">
+      <label class="q-label">Overall, how would you rate Health TechQuity 2026? <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Very Poor</span>
+        <div class="scale-btns" id="overallRating-btns">
+          <label class="scale-btn"><input type="radio" name="overallRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="overallRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="overallRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="overallRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="overallRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Excellent</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-relevance">
+      <label class="q-label">How relevant was the conference content to your work or interests? <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Not relevant</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="relevanceRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="relevanceRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="relevanceRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="relevanceRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="relevanceRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Extremely relevant</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-equity">
+      <label class="q-label">How effective was the conference in surfacing or addressing equity concerns in emerging health technology? <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Not at all effective</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="equityRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="equityRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="equityRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="equityRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="equityRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Highly effective</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-diversity">
+      <label class="q-label">How would you rate the diversity and inclusivity of speakers and perspectives? <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Poor</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="diversityRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="diversityRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="diversityRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="diversityRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="diversityRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Excellent</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-org">
+      <label class="q-label">How well was the conference organized and run (logistics, scheduling, venue)? <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Poorly</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="orgRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="orgRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="orgRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="orgRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="orgRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Excellently</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-networking">
+      <label class="q-label">How valuable was the networking opportunity?</label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Not valuable</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="networkingRating" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="networkingRating" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="networkingRating" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="networkingRating" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="networkingRating" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Extremely valuable</span>
+      </div>
+    </div>
+
+    <div class="question" id="q-aspects">
+      <label class="q-label">Which aspects did you find most valuable? (Select all that apply)</label>
+      <div class="options">
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Keynote / plenary presentations"> Keynote / plenary presentations</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Breakout sessions"> Breakout sessions</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Innovation Spotlight"> Innovation Spotlight</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Evening reception and networking"> Evening reception and networking</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Diversity of speakers and perspectives"> Diversity of speakers and perspectives</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Applicability to my work or research"> Applicability to my work or research</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Connections made with other attendees"> Connections made with other attendees</label>
+        <label class="option"><input type="checkbox" name="valuableAspects" value="Exposure to new technologies and tools"> Exposure to new technologies and tools</label>
+      </div>
+    </div>
+
+    <div class="question" id="q-recommend">
+      <label class="q-label">Would you recommend this conference to a colleague? <span class="req">*</span></label>
+      <div class="options">
+        <label class="option"><input type="radio" name="wouldRecommend" value="Definitely yes"> Definitely yes</label>
+        <label class="option"><input type="radio" name="wouldRecommend" value="Probably yes"> Probably yes</label>
+        <label class="option"><input type="radio" name="wouldRecommend" value="Not sure"> Not sure</label>
+        <label class="option"><input type="radio" name="wouldRecommend" value="Probably not"> Probably not</label>
+        <label class="option"><input type="radio" name="wouldRecommend" value="Definitely not"> Definitely not</label>
+      </div>
+      <div class="error-msg">Please select an option.</div>
+    </div>
+
+    <div class="question" id="q-attendagain">
+      <label class="q-label">Would you attend Health TechQuity again in the future? <span class="req">*</span></label>
+      <div class="options">
+        <label class="option"><input type="radio" name="wouldAttendAgain" value="Definitely yes"> Definitely yes</label>
+        <label class="option"><input type="radio" name="wouldAttendAgain" value="Probably yes"> Probably yes</label>
+        <label class="option"><input type="radio" name="wouldAttendAgain" value="Not sure"> Not sure</label>
+        <label class="option"><input type="radio" name="wouldAttendAgain" value="Probably not"> Probably not</label>
+        <label class="option"><input type="radio" name="wouldAttendAgain" value="Definitely not"> Definitely not</label>
+      </div>
+      <div class="error-msg">Please select an option.</div>
+    </div>
+
+    <div class="question">
+      <label class="q-label">What was the single most valuable aspect of the conference for you?</label>
+      <textarea name="mostValuable" placeholder="Share what stood out most…"></textarea>
+    </div>
+
+    <div class="question">
+      <label class="q-label">What could be improved for future Health TechQuity conferences?</label>
+      <textarea name="improvements" placeholder="Your suggestions…"></textarea>
+    </div>
+  </div>
+
+  <!-- ══ STEP 3: Sessions Attended ════════════════════════════════════════ -->
+  <div class="step" id="step-3">
+    <div class="step-title">Sessions You Attended</div>
+    <div class="step-subtitle">
+      Select all sessions you attended. If you attended more than 3, we will randomly choose 3 for
+      detailed feedback — prioritizing coverage of Day 2 sessions where attendance was smaller.
+    </div>
+
+    <div class="question" id="q-sessions">
+      <div class="day-divider">Day 1 — March 4, 2026</div>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="0">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Opening Plenary &nbsp;|&nbsp; 9:00–9:50 AM</div>
+          <div class="s-title">Framing Health TechQuity in Behavioral Health</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="1">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Opening Panel &nbsp;|&nbsp; 10:00–11:30 AM</div>
+          <div class="s-title">Population Behavioral &amp; Mental Health</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="2">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Session 1a &nbsp;|&nbsp; 12:00–1:30 PM</div>
+          <div class="s-title">Implementation of California's Behavioral Health Transformation</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="3">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Session 1b &nbsp;|&nbsp; 12:00–1:30 PM</div>
+          <div class="s-title">Digital Tools for Loneliness in Special Populations (Older Adults &amp; People with ASD)</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="4">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Session 2a &nbsp;|&nbsp; 1:45–3:15 PM</div>
+          <div class="s-title">Digital Twins: An Emerging Behavioral Health Tool</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="5">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Session 2b &nbsp;|&nbsp; 1:45–3:15 PM</div>
+          <div class="s-title">Strategies for Advancing Women's Health</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="6">
+        <div class="s-meta">
+          <div class="s-day">Day 1</div>
+          <div class="s-label">Innovation Spotlight &nbsp;|&nbsp; 3:30–4:45 PM</div>
+          <div class="s-title">Innovations That Could Close a Gap</div>
+        </div>
+      </label>
+
+      <div class="day-divider">Day 2 — March 5, 2026</div>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="7">
+        <div class="s-meta">
+          <div class="s-day">Day 2</div>
+          <div class="s-label">Opening Plenary &nbsp;|&nbsp; 9:00–9:50 AM</div>
+          <div class="s-title">Sticky Issues in Technology for Health Equity</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="8">
+        <div class="s-meta">
+          <div class="s-day">Day 2</div>
+          <div class="s-label">Session 3a &nbsp;|&nbsp; 10:00–11:30 AM</div>
+          <div class="s-title">What Will It Take to Scale Equitable Solutions?</div>
+        </div>
+      </label>
+
+      <label class="session-chk">
+        <input type="checkbox" name="sessionsAttended" value="9">
+        <div class="s-meta">
+          <div class="s-day">Day 2</div>
+          <div class="s-label">Session 3b &nbsp;|&nbsp; 10:00–11:30 AM</div>
+          <div class="s-title">Preparing Tomorrow's Workforce, Today</div>
+        </div>
+      </label>
+
+      <div class="error-msg" id="sessions-error" style="display:none; margin-top:8px;">Please select at least one session you attended.</div>
+    </div>
+  </div>
+
+  <!-- ══ STEPS 4–6: Session Evaluations (dynamically populated) ══════════ -->
+  <div class="step" id="step-4"></div>
+  <div class="step" id="step-5"></div>
+  <div class="step" id="step-6"></div>
+
+  <!-- ══ STEP 7: Wrap Up ══════════════════════════════════════════════════ -->
+  <div class="step" id="step-7">
+    <div class="step-title">Final Thoughts</div>
+    <div class="step-subtitle">Just a few last questions — you're almost done!</div>
+
+    <div class="question">
+      <label class="q-label">Any other thoughts about your Health TechQuity 2026 experience?</label>
+      <textarea name="finalComments" placeholder="Anything we haven't asked about…"></textarea>
+    </div>
+
+    <div class="question" id="q-crosssector">
+      <label class="q-label">Did you connect with at least one person from a different sector (i.e., "Thinker," "Doer," or "Innovator") that has good potential of maturing into a new partnership? <span class="req">*</span></label>
+      <div class="options">
+        <label class="option"><input type="radio" name="crossSectorConnection" value="Yes"> Yes</label>
+        <label class="option"><input type="radio" name="crossSectorConnection" value="No"> No</label>
+        <label class="option"><input type="radio" name="crossSectorConnection" value="Not sure yet"> Not sure yet</label>
+      </div>
+      <div class="error-msg">Please select an option.</div>
+    </div>
+
+    <div class="question">
+      <label class="q-label">How did you hear about Health TechQuity 2026?</label>
+      <div class="options">
+        <label class="option"><input type="radio" name="howHeard" value="SJSU / university communication"> SJSU / university communication</label>
+        <label class="option"><input type="radio" name="howHeard" value="Colleague or peer referral"> Colleague or peer referral</label>
+        <label class="option"><input type="radio" name="howHeard" value="LinkedIn or social media"> LinkedIn or social media</label>
+        <label class="option"><input type="radio" name="howHeard" value="Professional organization"> Professional organization</label>
+        <label class="option"><input type="radio" name="howHeard" value="Email newsletter"> Email newsletter</label>
+        <label class="option"><input type="radio" name="howHeard" value="Conference website"> Conference website</label>
+        <label class="option"><input type="radio" name="howHeard" value="Other"> Other</label>
+      </div>
+    </div>
+
+    <div class="question">
+      <label class="q-label">I am interested in: (Select all that apply)</label>
+      <div class="options" id="futureInterests-options">
+        <label class="option"><input type="checkbox" name="futureInterests" value="Receiving updates about future Health TechQuity conferences"> Receiving updates about future conferences</label>
+        <label class="option"><input type="checkbox" name="futureInterests" value="Presenting or speaking at a future conference"> Presenting or speaking at a future conference</label>
+        <label class="option"><input type="checkbox" name="futureInterests" value="Volunteering or helping organize the next conference"> Volunteering or helping organize</label>
+        <label class="option"><input type="checkbox" name="futureInterests" value="Collaborating with other attendees or speakers"> Collaborating with attendees or speakers</label>
+        <label class="option"><input type="checkbox" name="futureInterests" value="Joining a mailing list or community of practice"> Joining a mailing list or community of practice</label>
+      </div>
+
+      <!-- Contact info panel — revealed when any interest is checked -->
+      <div id="contact-info-panel" style="display:none; margin-top:20px;">
+        <div class="contact-privacy-notice">
+          <span class="pn-icon">🔒</span>
+          <div>
+            <strong>This information will only be used for the purpose(s) you selected above.</strong>
+            It will not be shared, sold, or used for any other reason. Providing your contact details is voluntary.
+          </div>
+        </div>
+        <div class="contact-fields">
+          <div class="contact-row">
+            <div>
+              <label class="q-label" for="contactFirstName">First Name <span class="req">*</span></label>
+              <input type="text" id="contactFirstName" name="contactFirstName" class="text-input" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div>
+              <label class="q-label" for="contactLastName">Last Name <span class="req">*</span></label>
+              <input type="text" id="contactLastName" name="contactLastName" class="text-input" placeholder="Last name" autocomplete="family-name">
+            </div>
+          </div>
+          <div>
+            <label class="q-label" for="contactOrg">Organization <span class="req">*</span></label>
+            <input type="text" id="contactOrg" name="contactOrg" class="text-input" placeholder="Name of your organization" autocomplete="organization">
+          </div>
+          <div>
+            <label class="q-label" for="contactTitle">Position / Title <span class="req">*</span></label>
+            <input type="text" id="contactTitle" name="contactTitle" class="text-input" placeholder="Your role or title" autocomplete="organization-title">
+          </div>
+          <div>
+            <label class="q-label" for="contactEmail">Preferred Email Address <span class="req">*</span></label>
+            <input type="email" id="contactEmail" name="contactEmail" class="text-input" placeholder="you@example.com" autocomplete="email">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ STEP 8: Thank You ════════════════════════════════════════════════ -->
+  <div class="step" id="step-8">
+    <div class="thanks">
+      <div class="check">✅</div>
+      <h2>Thank You!</h2>
+      <p>
+        Your feedback has been recorded. We sincerely appreciate you taking the time to help
+        us improve Health TechQuity. We look forward to seeing you at future conferences!
+      </p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav-row" id="navRow">
+    <button class="btn btn-secondary" id="btnBack" onclick="navigate(-1)">← Back</button>
+    <span class="step-counter" id="stepCounter"></span>
+    <button class="btn btn-primary" id="btnNext" onclick="navigate(1)">Next →</button>
+  </div>
+
+</div><!-- .card -->
+
+<script>
+// ── Session Master Data ────────────────────────────────────────────────────
+const SESSIONS = [
+  { index:0, day:1, label:'Opening Plenary  |  9:00–9:50 AM',     title:'Framing Health TechQuity in Behavioral Health' },
+  { index:1, day:1, label:'Opening Panel  |  10:00–11:30 AM',     title:'Population Behavioral & Mental Health' },
+  { index:2, day:1, label:'Session 1a  |  12:00–1:30 PM',         title:"Implementation of California's Behavioral Health Transformation" },
+  { index:3, day:1, label:'Session 1b  |  12:00–1:30 PM',         title:'Digital Tools for Loneliness in Special Populations' },
+  { index:4, day:1, label:'Session 2a  |  1:45–3:15 PM',          title:'Digital Twins: An Emerging Behavioral Health Tool' },
+  { index:5, day:1, label:'Session 2b  |  1:45–3:15 PM',          title:"Strategies for Advancing Women's Health" },
+  { index:6, day:1, label:'Innovation Spotlight  |  3:30–4:45 PM',title:'Innovations That Could Close a Gap' },
+  { index:7, day:2, label:'Opening Plenary  |  9:00–9:50 AM',     title:'Sticky Issues in Technology for Health Equity' },
+  { index:8, day:2, label:'Session 3a  |  10:00–11:30 AM',        title:'What Will It Take to Scale Equitable Solutions?' },
+  { index:9, day:2, label:'Session 3b  |  10:00–11:30 AM',        title:"Preparing Tomorrow's Workforce, Today" }
+];
+
+// ── State ──────────────────────────────────────────────────────────────────
+const TOTAL_FIXED_STEPS = 9; // steps 0-8 exist in HTML (0-3 fixed, 4-6 session evals, 7-8 wrap+thanks)
+let stepSequence = [0, 1, 2, 3]; // built out after session selection
+let currentPos   = 0;            // index into stepSequence
+let evalSessions = [];           // sessions chosen for evaluation
+let submitted    = false;
+
+// ── Utility: shuffle array in place ───────────────────────────────────────
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
+// ── Session Selection Logic ────────────────────────────────────────────────
+// Rules:
+//   ≤ 3 attended  → evaluate all of them
+//   > 3 attended  → pick exactly 3, guaranteeing ≥1 Day 2 session if any Day 2 was attended
+function selectSessions(checkedIndices) {
+  const MAX = 3;
+  const attended = checkedIndices.map(i => SESSIONS[i]);
+
+  if (attended.length <= MAX) return [...attended];
+
+  const day1 = shuffle(attended.filter(s => s.day === 1));
+  const day2 = shuffle(attended.filter(s => s.day === 2));
+  const selected = [];
+
+  // Guarantee at least one Day 2 session when any were attended
+  if (day2.length > 0) {
+    selected.push(day2.shift());       // 1 guaranteed Day 2
+    while (selected.length < MAX && day1.length > 0) selected.push(day1.shift());
+    while (selected.length < MAX && day2.length > 0) selected.push(day2.shift());
+  } else {
+    while (selected.length < MAX && day1.length > 0) selected.push(day1.shift());
+  }
+
+  // Preserve chronological order for display
+  selected.sort((a, b) => a.index - b.index);
+  return selected;
+}
+
+// ── Build a session evaluation step ───────────────────────────────────────
+function buildEvalStep(stepEl, session, num, total) {
+  const dayLabel = 'Day ' + session.day;
+  stepEl.innerHTML = `
+    <div class="step-title">Session Feedback (${num} of ${total})</div>
+    <div class="session-banner">
+      <div class="sb-num">${dayLabel} — ${session.label}</div>
+      <div class="sb-title">${session.title}</div>
+    </div>
+
+    <div class="question" id="q-sq-quality-${num}">
+      <label class="q-label">Overall quality of this session's content <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Poor</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="sq_quality_${num}" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_quality_${num}" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_quality_${num}" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_quality_${num}" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_quality_${num}" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Excellent</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question" id="q-sq-relevance-${num}">
+      <label class="q-label">Relevance to your work or interests <span class="req">*</span></label>
+      <div class="scale-wrap">
+        <span class="scale-lo">Not relevant</span>
+        <div class="scale-btns">
+          <label class="scale-btn"><input type="radio" name="sq_relevance_${num}" value="1"><span>1</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_relevance_${num}" value="2"><span>2</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_relevance_${num}" value="3"><span>3</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_relevance_${num}" value="4"><span>4</span></label>
+          <label class="scale-btn"><input type="radio" name="sq_relevance_${num}" value="5"><span>5</span></label>
+        </div>
+        <span class="scale-hi">Highly relevant</span>
+      </div>
+      <div class="error-msg">Please select a rating.</div>
+    </div>
+
+    <div class="question">
+      <label class="q-label">What was most valuable, or what would you improve about this session?</label>
+      <textarea name="sq_feedback_${num}" placeholder="Share your thoughts on this session…"></textarea>
+    </div>
+  `;
+}
+
+// ── Navigation ─────────────────────────────────────────────────────────────
+function navigate(dir) {
+  const currentStepId = stepSequence[currentPos];
+
+  if (dir === 1) {
+    // Validate before moving forward
+    if (!validateStep(currentStepId)) return;
+
+    // After step 3: determine which sessions to evaluate and build the sequence
+    if (currentStepId === 3) {
+      const checkedBoxes = document.querySelectorAll('input[name="sessionsAttended"]:checked');
+      if (checkedBoxes.length === 0) {
+        document.getElementById('sessions-error').style.display = 'block';
+        return;
+      }
+      document.getElementById('sessions-error').style.display = 'none';
+
+      const checkedIndices = Array.from(checkedBoxes).map(cb => parseInt(cb.value));
+      evalSessions = selectSessions(checkedIndices);
+
+      // Build step sequence: 0,1,2,3 + eval steps (4..4+n-1) + 7, 8
+      stepSequence = [0, 1, 2, 3];
+      evalSessions.forEach((_, i) => {
+        const stepEl = document.getElementById('step-' + (4 + i));
+        buildEvalStep(stepEl, evalSessions[i], i + 1, evalSessions.length);
+        stepSequence.push(4 + i);
+      });
+      stepSequence.push(7, 8);
+
+      // If only 1 session, show a brief note
+      if (evalSessions.length === 1 && checkedIndices.length > 1) {
+        // (rare edge case — covered by selection logic)
+      }
+    }
+
+    // Last real step before thank-you: submit the form
+    if (currentStepId === 7) {
+      if (!submitted) {
+        submitForm();
+        return; // submitForm() will advance to step 8 on success
+      }
+    }
+  }
+
+  // Move to next/previous step
+  const newPos = currentPos + dir;
+  if (newPos < 0 || newPos >= stepSequence.length) return;
+
+  showStep(newPos);
+}
+
+function showStep(pos) {
+  const oldStepId = stepSequence[currentPos];
+  const newStepId = stepSequence[pos];
+
+  document.getElementById('step-' + oldStepId).classList.remove('active');
+  document.getElementById('step-' + newStepId).classList.add('active');
+  currentPos = pos;
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  updateNav();
+}
+
+function updateNav() {
+  const stepId   = stepSequence[currentPos];
+  const isFirst  = currentPos === 0;
+  const isLast   = currentPos === stepSequence.length - 1;
+  const isThanks = stepId === 8;
+
+  const btnBack    = document.getElementById('btnBack');
+  const btnNext    = document.getElementById('btnNext');
+  const navRow     = document.getElementById('navRow');
+  const counter    = document.getElementById('stepCounter');
+  const fill       = document.getElementById('progressFill');
+
+  btnBack.disabled = isFirst || isThanks;
+  btnNext.style.display = isThanks ? 'none' : 'inline-block';
+
+  if (stepId === 7) {
+    btnNext.textContent = 'Submit ✓';
+  } else {
+    btnNext.textContent = 'Next →';
+  }
+
+  // Progress: exclude welcome (0) and thanks (8) from displayed count
+  const totalVisible = stepSequence.length - 2; // minus welcome and thanks
+  const curVisible   = Math.max(0, currentPos - 1); // pos 1 = step 1 = "1 of N"
+  const pct = isThanks ? 100 : Math.round((curVisible / totalVisible) * 100);
+  fill.style.width = pct + '%';
+
+  if (!isFirst && !isThanks) {
+    counter.textContent = curVisible + ' of ' + totalVisible;
+  } else {
+    counter.textContent = '';
+  }
+}
+
+// ── Validation ─────────────────────────────────────────────────────────────
+function validateStep(stepId) {
+  let valid = true;
+
+  if (stepId === 1) {
+    valid = requireRadio('daysAttended', 'q-days') && valid;
+  }
+
+  if (stepId === 2) {
+    valid = requireRadio('overallRating',   'q-overall')    && valid;
+    valid = requireRadio('relevanceRating', 'q-relevance')  && valid;
+    valid = requireRadio('equityRating',    'q-equity')     && valid;
+    valid = requireRadio('diversityRating', 'q-diversity')  && valid;
+    valid = requireRadio('orgRating',       'q-org')        && valid;
+    valid = requireRadio('wouldRecommend',  'q-recommend')  && valid;
+    valid = requireRadio('wouldAttendAgain','q-attendagain') && valid;
+  }
+
+  // Eval steps 4-6: validate required ratings
+  if (stepId >= 4 && stepId <= 6) {
+    const n = stepId - 3; // 1, 2, or 3
+    valid = requireRadio('sq_quality_' + n,   'q-sq-quality-' + n)   && valid;
+    valid = requireRadio('sq_relevance_' + n, 'q-sq-relevance-' + n) && valid;
+  }
+
+  if (stepId === 7) {
+    valid = requireRadio('crossSectorConnection', 'q-crosssector') && valid;
+    // If contact panel is visible, validate its required fields
+    const panel = document.getElementById('contact-info-panel');
+    if (panel && panel.style.display !== 'none') {
+      valid = requireTextField('contactFirstName') && valid;
+      valid = requireTextField('contactLastName')  && valid;
+      valid = requireTextField('contactOrg')       && valid;
+      valid = requireTextField('contactTitle')      && valid;
+      valid = requireEmailField('contactEmail')     && valid;
+    }
+  }
+
+  return valid;
+}
+
+function requireTextField(id) {
+  const el = document.getElementById(id);
+  if (!el) return true;
+  if (el.value.trim()) {
+    el.classList.remove('input-error');
+    return true;
+  }
+  el.classList.add('input-error');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return false;
+}
+
+function requireEmailField(id) {
+  const el = document.getElementById(id);
+  if (!el) return true;
+  const val = el.value.trim();
+  const valid = val && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+  if (valid) {
+    el.classList.remove('input-error');
+    return true;
+  }
+  el.classList.add('input-error');
+  el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  return false;
+}
+
+function requireRadio(name, containerId) {
+  const checked = document.querySelector('input[name="' + name + '"]:checked');
+  const container = document.getElementById(containerId);
+  if (!container) return true; // step not rendered yet
+  if (checked) {
+    container.classList.remove('has-error');
+    return true;
+  } else {
+    container.classList.add('has-error');
+    container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+}
+
+// ── Collect Form Data ──────────────────────────────────────────────────────
+function collectFormData() {
+  function radio(name) {
+    const el = document.querySelector('input[name="' + name + '"]:checked');
+    return el ? el.value : '';
+  }
+  function checkboxes(name) {
+    return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(e => e.value);
+  }
+  function textarea(name) {
+    const el = document.querySelector('textarea[name="' + name + '"]');
+    return el ? el.value.trim() : '';
+  }
+
+  // Which sessions were checked (by attendee)
+  const attendedIndices = checkboxes('sessionsAttended').map(Number);
+  const attendedNames   = attendedIndices.map(i => 'Day ' + SESSIONS[i].day + ' — ' + SESSIONS[i].label + ': ' + SESSIONS[i].title);
+
+  // Which sessions were selected for evaluation
+  const evalNames = evalSessions.map(s => 'Day ' + s.day + ' — ' + s.label + ': ' + s.title);
+
+  // Per-session ratings
+  const sessionData = evalSessions.map((s, i) => {
+    const n = i + 1;
+    return {
+      name:      'Day ' + s.day + ' — ' + s.label + ': ' + s.title,
+      quality:   radio('sq_quality_'   + n),
+      relevance: radio('sq_relevance_' + n),
+      feedback:  textarea('sq_feedback_' + n)
+    };
+  });
+
+  return {
+    role:              radio('role'),
+    daysAttended:      radio('daysAttended'),
+    overallRating:     radio('overallRating'),
+    relevanceRating:   radio('relevanceRating'),
+    equityRating:      radio('equityRating'),
+    diversityRating:   radio('diversityRating'),
+    orgRating:         radio('orgRating'),
+    networkingRating:  radio('networkingRating'),
+    valuableAspects:   checkboxes('valuableAspects'),
+    wouldRecommend:    radio('wouldRecommend'),
+    wouldAttendAgain:  radio('wouldAttendAgain'),
+    mostValuable:      textarea('mostValuable'),
+    improvements:      textarea('improvements'),
+    sessionsAttended:  attendedNames,
+    sessionsEvaluated: evalNames,
+    evalSessions:      sessionData,
+    crossSectorConnection: radio('crossSectorConnection'),
+    finalComments:         textarea('finalComments'),
+    howHeard:              radio('howHeard'),
+    futureInterests:       checkboxes('futureInterests'),
+    // Contact info (only present if futureInterests were selected)
+    contactFirstName: document.getElementById('contactFirstName') ? document.getElementById('contactFirstName').value.trim() : '',
+    contactLastName:  document.getElementById('contactLastName')  ? document.getElementById('contactLastName').value.trim()  : '',
+    contactOrg:       document.getElementById('contactOrg')       ? document.getElementById('contactOrg').value.trim()       : '',
+    contactTitle:     document.getElementById('contactTitle')      ? document.getElementById('contactTitle').value.trim()      : '',
+    contactEmail:     document.getElementById('contactEmail')      ? document.getElementById('contactEmail').value.trim()      : ''
+  };
+}
+
+// ── Submit ─────────────────────────────────────────────────────────────────
+// Replace YOUR_FORMSPREE_ID below with your actual Formspree form ID
+// e.g. if your Formspree endpoint is https://formspree.io/f/abcdefgh
+// then set FORMSPREE_ID = 'abcdefgh'
+var FORMSPREE_ID = 'YOUR_FORMSPREE_ID';
+
+function flattenData(d) {
+  function arr(v) { return Array.isArray(v) ? v.join(', ') : (v || ''); }
+  function es(i) { return (d.evalSessions || [])[i] || {}; }
+  return {
+    'Role':                        d.role || '',
+    'Days Attended':               d.daysAttended || '',
+    'Overall Rating':              d.overallRating || '',
+    'Content Relevance':           d.relevanceRating || '',
+    'Equity Effectiveness':        d.equityRating || '',
+    'Speaker Diversity':           d.diversityRating || '',
+    'Conference Organization':     d.orgRating || '',
+    'Networking Value':            d.networkingRating || '',
+    'Most Valuable Aspects':       arr(d.valuableAspects),
+    'Would Recommend':             d.wouldRecommend || '',
+    'Would Attend Again':          d.wouldAttendAgain || '',
+    'Most Valuable Thing':         d.mostValuable || '',
+    'Improvement Suggestions':     d.improvements || '',
+    'All Sessions Attended':       arr(d.sessionsAttended),
+    'Sessions Evaluated':          arr(d.sessionsEvaluated),
+    'Session 1 Name':              es(0).name || '',
+    'Session 1 Quality':           es(0).quality || '',
+    'Session 1 Relevance':         es(0).relevance || '',
+    'Session 1 Feedback':          es(0).feedback || '',
+    'Session 2 Name':              es(1).name || '',
+    'Session 2 Quality':           es(1).quality || '',
+    'Session 2 Relevance':         es(1).relevance || '',
+    'Session 2 Feedback':          es(1).feedback || '',
+    'Session 3 Name':              es(2).name || '',
+    'Session 3 Quality':           es(2).quality || '',
+    'Session 3 Relevance':         es(2).relevance || '',
+    'Session 3 Feedback':          es(2).feedback || '',
+    'Cross-Sector Connection':     d.crossSectorConnection || '',
+    'Final Comments':              d.finalComments || '',
+    'How Heard':                   d.howHeard || '',
+    'Future Interests':            arr(d.futureInterests),
+    'Contact First Name':          d.contactFirstName || '',
+    'Contact Last Name':           d.contactLastName || '',
+    'Contact Organization':        d.contactOrg || '',
+    'Contact Title':               d.contactTitle || '',
+    'Contact Email':               d.contactEmail || ''
+  };
+}
+
+function submitForm() {
+  const btnNext = document.getElementById('btnNext');
+  btnNext.disabled = true;
+  btnNext.innerHTML = '<span class="spinner"></span>Submitting…';
+
+  const payload = flattenData(collectFormData());
+
+  fetch('https://formspree.io/f/' + FORMSPREE_ID, {
+    method:  'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body:    JSON.stringify(payload)
+  })
+  .then(function(response) { return response.json(); })
+  .then(function(result) {
+    if (result.ok) {
+      submitted = true;
+      showStep(currentPos + 1);
+    } else {
+      throw new Error(result.error || 'Submission rejected');
+    }
+  })
+  .catch(function(err) {
+    btnNext.disabled = false;
+    btnNext.textContent = 'Submit ✓';
+    alert('Sorry, there was an error saving your response. Please try again.\n\n' + err.message);
+  });
+}
+
+// ── Contact Panel Show/Hide ────────────────────────────────────────────────
+function updateContactPanel() {
+  const anyChecked = document.querySelectorAll('input[name="futureInterests"]:checked').length > 0;
+  const panel = document.getElementById('contact-info-panel');
+  if (!panel) return;
+  panel.style.display = anyChecked ? 'block' : 'none';
+  // Clear errors when panel is hidden
+  if (!anyChecked) {
+    ['contactFirstName','contactLastName','contactOrg','contactTitle','contactEmail'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.classList.remove('input-error');
+    });
+  }
+}
+
+// ── Init ───────────────────────────────────────────────────────────────────
+updateNav();
+
+// Wire up interest checkboxes to show/hide contact panel
+document.getElementById('futureInterests-options').addEventListener('change', updateContactPanel);
+</script>
+</body>
+</html>
