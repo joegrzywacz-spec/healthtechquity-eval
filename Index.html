@@ -1,0 +1,1116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1">&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1">&lt;title&gt;Health TechQuity 2026 — Conference Evaluation&lt;/title&gt;</p>
+<p class="p1">&lt;style&gt;</p>
+<p class="p1">/* ── Reset &amp; Base ─────────────────────────────────────────────────────────── */</p>
+<p class="p1">*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
+<p class="p2"><br></p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: 'Segoe UI', Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #f1f3f4;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #202124;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 20px 16px 60px;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Card ─────────────────────────────────────────────────────────────────── */</p>
+<p class="p1">.card {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>max-width: 680px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>box-shadow: 0 1px 3px rgba(0,0,0,.15), 0 2px 8px rgba(0,0,0,.08);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Progress Bar ─────────────────────────────────────────────────────────── */</p>
+<p class="p1">.progress-bar { height: 6px; background: #e0e0e0; }</p>
+<p class="p1">.progress-fill { height: 100%; background: #1a73e8; transition: width .4s ease; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Header ──────────────────────────────────────────────────────────────── */</p>
+<p class="p1">.card-header { background: #1a73e8; color: #fff; padding: 22px 28px; }</p>
+<p class="p1">.card-header h1 { font-size: 1.35rem; font-weight: 600; margin-bottom: 3px; }</p>
+<p class="p1">.card-header p<span class="Apple-converted-space">  </span>{ font-size: 0.875rem; opacity: .9; line-height: 1.5; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Steps ───────────────────────────────────────────────────────────────── */</p>
+<p class="p1">.step { display: none; padding: 26px 28px; }</p>
+<p class="p1">.step.active { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1">.step-title {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 1.05rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #202124;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-bottom: 2px solid #1a73e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 6px;</p>
+<p class="p1">}</p>
+<p class="p1">.step-subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #5f6368;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height: 1.5;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Questions ───────────────────────────────────────────────────────────── */</p>
+<p class="p1">.question { margin-bottom: 22px; }</p>
+<p class="p1">.q-label {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.9375rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #202124;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height: 1.45;</p>
+<p class="p1">}</p>
+<p class="p1">.req { color: #d93025; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Radio &amp; Checkbox Options ────────────────────────────────────────────── */</p>
+<p class="p1">.options { display: flex; flex-direction: column; gap: 6px; }</p>
+<p class="p1">.option {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 7px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: background .15s;</p>
+<p class="p1">}</p>
+<p class="p1">.option:hover { background: #f8f9fa; }</p>
+<p class="p1">.option input[type=radio],</p>
+<p class="p1">.option input[type=checkbox] {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>accent-color: #1a73e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 16px; height: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer; flex-shrink: 0;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── 5-Point Rating Scale ────────────────────────────────────────────────── */</p>
+<p class="p1">.scale-wrap { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }</p>
+<p class="p1">.scale-lo, .scale-hi { font-size: 0.78rem; color: #5f6368; white-space: nowrap; }</p>
+<p class="p1">.scale-btns { display: flex; gap: 6px; }</p>
+<p class="p1">.scale-btn { position: relative; cursor: pointer; }</p>
+<p class="p1">.scale-btn input { position: absolute; opacity: 0; width: 0; height: 0; }</p>
+<p class="p1">.scale-btn span {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex; align-items: center; justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 40px; height: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 2px solid #dadce0; border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.875rem; font-weight: 600; color: #5f6368;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: all .15s;</p>
+<p class="p1">}</p>
+<p class="p1">.scale-btn:hover span<span class="Apple-converted-space">      </span>{ border-color: #1a73e8; color: #1a73e8; background: #e8f0fe; }</p>
+<p class="p1">.scale-btn input:checked + span { background: #1a73e8; border-color: #1a73e8; color: #fff; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Textarea ────────────────────────────────────────────────────────────── */</p>
+<p class="p1">textarea {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%; min-height: 80px; padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #dadce0; border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: inherit; font-size: 0.9rem; color: #202124;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>resize: vertical; line-height: 1.5; transition: border-color .15s;</p>
+<p class="p1">}</p>
+<p class="p1">textarea:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,.2); }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Validation ──────────────────────────────────────────────────────────── */</p>
+<p class="p1">.error-msg { color: #d93025; font-size: 0.8rem; margin-top: 5px; display: none; }</p>
+<p class="p1">.question.has-error .error-msg { display: block; }</p>
+<p class="p1">.question.has-error .scale-btns .scale-btn span { border-color: #f28b82; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Session Checkboxes (Step 3) ─────────────────────────────────────────── */</p>
+<p class="p1">.session-chk {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex; align-items: flex-start; gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #e0e0e0; border-radius: 6px; margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>cursor: pointer; transition: border-color .15s, background .15s;</p>
+<p class="p1">}</p>
+<p class="p1">.session-chk:hover { border-color: #1a73e8; background: #f8f9fa; }</p>
+<p class="p1">.session-chk input[type=checkbox] {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>accent-color: #1a73e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 16px; height: 16px; margin-top: 3px; flex-shrink: 0; cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.session-chk .s-meta <span class="Apple-converted-space">  </span>{ flex: 1; }</p>
+<p class="p1">.session-chk .s-day<span class="Apple-converted-space">    </span>{ font-size: 0.75rem; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 2px; }</p>
+<p class="p1">.session-chk .s-label<span class="Apple-converted-space">  </span>{ font-size: 0.78rem; color: #5f6368; margin-bottom: 2px; }</p>
+<p class="p1">.session-chk .s-title<span class="Apple-converted-space">  </span>{ font-size: 0.9rem; color: #202124; font-weight: 500; }</p>
+<p class="p1">.day-divider { font-size: 0.75rem; font-weight: 700; color: #5f6368; text-transform: uppercase; letter-spacing: .08em; margin: 14px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e0e0e0; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Session Banner (in eval steps) ─────────────────────────────────────── */</p>
+<p class="p1">.session-banner {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #e8f0fe; border-left: 4px solid #1a73e8;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 0 6px 6px 0; padding: 12px 16px; margin-bottom: 22px;</p>
+<p class="p1">}</p>
+<p class="p1">.session-banner .sb-num <span class="Apple-converted-space">  </span>{ font-size: 0.72rem; font-weight: 700; color: #1a73e8; text-transform: uppercase; letter-spacing: .05em; margin-bottom: 3px; }</p>
+<p class="p1">.session-banner .sb-label { font-size: 0.78rem; color: #5f6368; margin-bottom: 3px; }</p>
+<p class="p1">.session-banner .sb-title { font-size: 0.975rem; font-weight: 600; color: #202124; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Notice Box ──────────────────────────────────────────────────────────── */</p>
+<p class="p1">.notice {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #fef7e0; border: 1px solid #fdd663; border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 14px; font-size: 0.84rem; color: #7a5f00;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 18px; line-height: 1.5;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Navigation Row ──────────────────────────────────────────────────────── */</p>
+<p class="p1">.nav-row {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex; justify-content: space-between; align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 16px 28px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-top: 1px solid #e8eaed;</p>
+<p class="p1">}</p>
+<p class="p1">.btn {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 10px 22px; border-radius: 4px; border: none;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all .15s;</p>
+<p class="p1">}</p>
+<p class="p1">.btn-primary { background: #1a73e8; color: #fff; }</p>
+<p class="p1">.btn-primary:hover:not(:disabled) { background: #1765cc; box-shadow: 0 1px 3px rgba(0,0,0,.2); }</p>
+<p class="p1">.btn-secondary { background: transparent; color: #1a73e8; border: 1px solid #dadce0; }</p>
+<p class="p1">.btn-secondary:hover:not(:disabled) { background: #f1f3f4; }</p>
+<p class="p1">.btn:disabled { opacity: .45; cursor: not-allowed; }</p>
+<p class="p1">.step-counter { font-size: 0.8rem; color: #5f6368; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Welcome &amp; Thank-You Screens ─────────────────────────────────────────── */</p>
+<p class="p1">.welcome { text-align: center; padding: 12px 0; }</p>
+<p class="p1">.welcome .conf-title { font-size: 1.45rem; font-weight: 700; color: #1a73e8; margin-bottom: 6px; }</p>
+<p class="p1">.welcome .conf-sub <span class="Apple-converted-space">  </span>{ color: #5f6368; font-size: 0.875rem; margin-bottom: 22px; }</p>
+<p class="p1">.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 0 0 20px; text-align: left; }</p>
+<p class="p1">.info-card { border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px 14px; }</p>
+<p class="p1">.info-card .ic-icon<span class="Apple-converted-space">  </span>{ font-size: 1.3rem; margin-bottom: 4px; }</p>
+<p class="p1">.info-card .ic-label { font-size: 0.72rem; color: #5f6368; text-transform: uppercase; letter-spacing: .04em; }</p>
+<p class="p1">.info-card .ic-val <span class="Apple-converted-space">  </span>{ font-size: 0.9rem; font-weight: 600; color: #202124; }</p>
+<p class="p1">.welcome-note { font-size: 0.84rem; color: #5f6368; line-height: 1.6; margin-bottom: 8px; }</p>
+<p class="p2"><br></p>
+<p class="p1">.thanks { text-align: center; padding: 28px 10px; }</p>
+<p class="p1">.thanks .check { font-size: 3rem; margin-bottom: 14px; }</p>
+<p class="p1">.thanks h2 { font-size: 1.35rem; color: #1a73e8; margin-bottom: 8px; }</p>
+<p class="p1">.thanks p<span class="Apple-converted-space">  </span>{ color: #5f6368; font-size: 0.875rem; line-height: 1.65; max-width: 420px; margin: 0 auto; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Spinner ─────────────────────────────────────────────────────────────── */</p>
+<p class="p1">.spinner {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: inline-block; width: 20px; height: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 3px solid rgba(255,255,255,.4); border-top-color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 50%; animation: spin .7s linear infinite; vertical-align: middle; margin-right: 6px;</p>
+<p class="p1">}</p>
+<p class="p1">@keyframes spin { to { transform: rotate(360deg); } }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Contact Info Panel ──────────────────────────────────────────────────── */</p>
+<p class="p1">.contact-privacy-notice {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>background: #e8f5e9;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #a5d6a7;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>padding: 13px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>margin-bottom: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-size: 0.875rem;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>color: #1b5e20;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>line-height: 1.55;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>align-items: flex-start;</p>
+<p class="p1">}</p>
+<p class="p1">.contact-privacy-notice .pn-icon { font-size: 1.15rem; flex-shrink: 0; margin-top: 1px; }</p>
+<p class="p1">.contact-privacy-notice strong { display: block; margin-bottom: 2px; font-size: 0.9rem; }</p>
+<p class="p1">.contact-fields { display: flex; flex-direction: column; gap: 14px; }</p>
+<p class="p1">.contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }</p>
+<p class="p1">.text-input {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>width: 100%; padding: 9px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>border: 1px solid #dadce0; border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>font-family: inherit; font-size: 0.9rem; color: #202124;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>transition: border-color .15s; margin-top: 6px;</p>
+<p class="p1">}</p>
+<p class="p1">.text-input:focus { outline: none; border-color: #1a73e8; box-shadow: 0 0 0 2px rgba(26,115,232,.2); }</p>
+<p class="p1">.text-input.input-error { border-color: #d93025; }</p>
+<p class="p2"><br></p>
+<p class="p1">/* ── Responsive ──────────────────────────────────────────────────────────── */</p>
+<p class="p1">@media (max-width: 500px) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.step { padding: 20px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.nav-row { padding: 14px 16px 18px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.card-header { padding: 18px 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.scale-btn span { width: 35px; height: 35px; font-size: 0.8rem; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.info-grid { grid-template-columns: 1fr; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.contact-row { grid-template-columns: 1fr; }</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1">&lt;div class="card"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Progress Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="progress-bar"&gt;&lt;div class="progress-fill" id="progressFill" style="width:0%"&gt;&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="card-header"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Health TechQuity 2026&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Conference Evaluation &amp;nbsp;·&amp;nbsp; Behavioral Health in the Age of Emerging Technology&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 0: Welcome ══════════════════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step active" id="step-0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="welcome"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="conf-title"&gt;Thank You for Attending!&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="conf-sub"&gt;March 4–5, 2026 &amp;nbsp;|&amp;nbsp; San José State University&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="info-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="info-card"&gt;&lt;div class="ic-icon"&gt;⏱&lt;/div&gt;&lt;div class="ic-label"&gt;Estimated time&lt;/div&gt;&lt;div class="ic-val"&gt;5–8 minutes&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="info-card"&gt;&lt;div class="ic-icon"&gt;📋&lt;/div&gt;&lt;div class="ic-label"&gt;Session evaluations&lt;/div&gt;&lt;div class="ic-val"&gt;Up to 3 sessions&lt;/div&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="welcome-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>We'll ask about your overall conference experience, then ask you to select which sessions you attended.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>If you attended more than 3 sessions, we'll randomly select 3 for deeper feedback — ensuring we capture input across all sessions, including Day 2.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Responses are anonymous.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 1: About You ════════════════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-title"&gt;About You&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-subtitle"&gt;A couple of quick questions to help us understand our audience.&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-role"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Which best describes your primary professional role?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Faculty / Staff"&gt; Faculty / Staff&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Healthcare Provider / Clinician"&gt; Healthcare Provider / Clinician&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Technology Developer / Innovator"&gt; Technology Developer / Innovator&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Policy Maker / Government"&gt; Policy Maker / Government&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Community Organization / Nonprofit"&gt; Community Organization / Nonprofit&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Student"&gt; Student&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Industry / Corporate"&gt; Industry / Corporate&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="role" value="Other"&gt; Other&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-days"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Which day(s) did you attend? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="daysAttended" value="Day 1 only (March 4)"&gt; Day 1 only (March 4)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="daysAttended" value="Day 2 only (March 5)"&gt; Day 2 only (March 5)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="daysAttended" value="Both days (March 4 &amp;amp; 5)"&gt; Both days (March 4 &amp;amp; 5)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select which day(s) you attended.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 2: Overall Conference ═══════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-title"&gt;Overall Conference Feedback&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-subtitle"&gt;Please rate the following aspects of Health TechQuity 2026 overall. Questions marked with a &lt;span style="color:#d93025;font-weight:600;"&gt;*&lt;/span&gt; are required.&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-overall"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Overall, how would you rate Health TechQuity 2026? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Very Poor&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns" id="overallRating-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="overallRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="overallRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="overallRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="overallRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="overallRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Excellent&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-relevance"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How relevant was the conference content to your work or interests? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Not relevant&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="relevanceRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="relevanceRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="relevanceRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="relevanceRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="relevanceRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Extremely relevant&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-equity"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How effective was the conference in surfacing or addressing equity concerns in emerging health technology? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Not at all effective&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="equityRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="equityRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="equityRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="equityRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="equityRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Highly effective&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-diversity"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How would you rate the diversity and inclusivity of speakers and perspectives? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Poor&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="diversityRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="diversityRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="diversityRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="diversityRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="diversityRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Excellent&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-org"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How well was the conference organized and run (logistics, scheduling, venue)? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Poorly&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="orgRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="orgRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="orgRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="orgRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="orgRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Excellently&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-networking"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How valuable was the networking opportunity?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Not valuable&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="networkingRating" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="networkingRating" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="networkingRating" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="networkingRating" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="networkingRating" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Extremely valuable&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-aspects"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Which aspects did you find most valuable? (Select all that apply)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Keynote / plenary presentations"&gt; Keynote / plenary presentations&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Breakout sessions"&gt; Breakout sessions&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Innovation Spotlight"&gt; Innovation Spotlight&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Evening reception and networking"&gt; Evening reception and networking&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Diversity of speakers and perspectives"&gt; Diversity of speakers and perspectives&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Applicability to my work or research"&gt; Applicability to my work or research&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Connections made with other attendees"&gt; Connections made with other attendees&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="valuableAspects" value="Exposure to new technologies and tools"&gt; Exposure to new technologies and tools&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-recommend"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Would you recommend this conference to a colleague? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldRecommend" value="Definitely yes"&gt; Definitely yes&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldRecommend" value="Probably yes"&gt; Probably yes&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldRecommend" value="Not sure"&gt; Not sure&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldRecommend" value="Probably not"&gt; Probably not&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldRecommend" value="Definitely not"&gt; Definitely not&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select an option.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-attendagain"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Would you attend Health TechQuity again in the future? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldAttendAgain" value="Definitely yes"&gt; Definitely yes&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldAttendAgain" value="Probably yes"&gt; Probably yes&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldAttendAgain" value="Not sure"&gt; Not sure&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldAttendAgain" value="Probably not"&gt; Probably not&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="wouldAttendAgain" value="Definitely not"&gt; Definitely not&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select an option.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;What was the single most valuable aspect of the conference for you?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;textarea name="mostValuable" placeholder="Share what stood out most…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;What could be improved for future Health TechQuity conferences?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;textarea name="improvements" placeholder="Your suggestions…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 3: Sessions Attended ════════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-title"&gt;Sessions You Attended&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-subtitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>Select all sessions you attended. If you attended more than 3, we will randomly choose 3 for</p>
+<p class="p1"><span class="Apple-converted-space">      </span>detailed feedback — prioritizing coverage of Day 2 sessions where attendance was smaller.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-sessions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-divider"&gt;Day 1 — March 4, 2026&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Opening Plenary &amp;nbsp;|&amp;nbsp; 9:00–9:50 AM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Framing Health TechQuity in Behavioral Health&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Opening Panel &amp;nbsp;|&amp;nbsp; 10:00–11:30 AM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Population Behavioral &amp;amp; Mental Health&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="2"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 1a &amp;nbsp;|&amp;nbsp; 12:00–1:30 PM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Implementation of California's Behavioral Health Transformation&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 1b &amp;nbsp;|&amp;nbsp; 12:00–1:30 PM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Digital Tools for Loneliness in Special Populations (Older Adults &amp;amp; People with ASD)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 2a &amp;nbsp;|&amp;nbsp; 1:45–3:15 PM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Digital Twins: An Emerging Behavioral Health Tool&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="5"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 2b &amp;nbsp;|&amp;nbsp; 1:45–3:15 PM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Strategies for Advancing Women's Health&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 1&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Innovation Spotlight &amp;nbsp;|&amp;nbsp; 3:30–4:45 PM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Innovations That Could Close a Gap&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="day-divider"&gt;Day 2 — March 5, 2026&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Opening Plenary &amp;nbsp;|&amp;nbsp; 9:00–9:50 AM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Sticky Issues in Technology for Health Equity&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 3a &amp;nbsp;|&amp;nbsp; 10:00–11:30 AM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;What Will It Take to Scale Equitable Solutions?&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="session-chk"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;input type="checkbox" name="sessionsAttended" value="9"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="s-meta"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-day"&gt;Day 2&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-label"&gt;Session 3b &amp;nbsp;|&amp;nbsp; 10:00–11:30 AM&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="s-title"&gt;Preparing Tomorrow's Workforce, Today&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/label&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg" id="sessions-error" style="display:none; margin-top:8px;"&gt;Please select at least one session you attended.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEPS 4–6: Session Evaluations (dynamically populated) ══════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-4"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-5"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-6"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 7: Wrap Up ══════════════════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-7"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-title"&gt;Final Thoughts&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-subtitle"&gt;Just a few last questions — you're almost done!&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Any other thoughts about your Health TechQuity 2026 experience?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;textarea name="finalComments" placeholder="Anything we haven't asked about…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-crosssector"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Did you connect with at least one person from a different sector (i.e., "Thinker," "Doer," or "Innovator") that has good potential of maturing into a new partnership? &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="crossSectorConnection" value="Yes"&gt; Yes&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="crossSectorConnection" value="No"&gt; No&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="crossSectorConnection" value="Not sure yet"&gt; Not sure yet&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select an option.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;How did you hear about Health TechQuity 2026?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="SJSU / university communication"&gt; SJSU / university communication&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="Colleague or peer referral"&gt; Colleague or peer referral&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="LinkedIn or social media"&gt; LinkedIn or social media&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="Professional organization"&gt; Professional organization&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="Email newsletter"&gt; Email newsletter&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="Conference website"&gt; Conference website&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="radio" name="howHeard" value="Other"&gt; Other&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;I am interested in: (Select all that apply)&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="options" id="futureInterests-options"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="futureInterests" value="Receiving updates about future Health TechQuity conferences"&gt; Receiving updates about future conferences&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="futureInterests" value="Presenting or speaking at a future conference"&gt; Presenting or speaking at a future conference&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="futureInterests" value="Volunteering or helping organize the next conference"&gt; Volunteering or helping organize&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="futureInterests" value="Collaborating with other attendees or speakers"&gt; Collaborating with attendees or speakers&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;label class="option"&gt;&lt;input type="checkbox" name="futureInterests" value="Joining a mailing list or community of practice"&gt; Joining a mailing list or community of practice&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Contact info panel — revealed when any interest is checked --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div id="contact-info-panel" style="display:none; margin-top:20px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-privacy-notice"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="pn-icon"&gt;🔒&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;strong&gt;This information will only be used for the purpose(s) you selected above.&lt;/strong&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>It will not be shared, sold, or used for any other reason. Providing your contact details is voluntary.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="contact-fields"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="contact-row"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label class="q-label" for="contactFirstName"&gt;First Name &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="text" id="contactFirstName" name="contactFirstName" class="text-input" placeholder="First name" autocomplete="given-name"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;label class="q-label" for="contactLastName"&gt;Last Name &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;input type="text" id="contactLastName" name="contactLastName" class="text-input" placeholder="Last name" autocomplete="family-name"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="q-label" for="contactOrg"&gt;Organization &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="contactOrg" name="contactOrg" class="text-input" placeholder="Name of your organization" autocomplete="organization"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="q-label" for="contactTitle"&gt;Position / Title &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="contactTitle" name="contactTitle" class="text-input" placeholder="Your role or title" autocomplete="organization-title"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;label class="q-label" for="contactEmail"&gt;Preferred Email Address &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="email" id="contactEmail" name="contactEmail" class="text-input" placeholder="you@example.com" autocomplete="email"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- ══ STEP 8: Thank You ════════════════════════════════════════════════ --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="step" id="step-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="thanks"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="check"&gt;✅&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Thank You!&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Your feedback has been recorded. We sincerely appreciate you taking the time to help</p>
+<p class="p1"><span class="Apple-converted-space">        </span>us improve Health TechQuity. We look forward to seeing you at future conferences!</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="nav-row" id="navRow"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-secondary" id="btnBack" onclick="navigate(-1)"&gt;← Back&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;span class="step-counter" id="stepCounter"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn-primary" id="btnNext" onclick="navigate(1)"&gt;Next →&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;&lt;!-- .card --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">// ── Session Master Data ────────────────────────────────────────────────────</p>
+<p class="p1">const SESSIONS = [</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:0, day:1, label:'Opening Plenary<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>9:00–9:50 AM', <span class="Apple-converted-space">    </span>title:'Framing Health TechQuity in Behavioral Health' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:1, day:1, label:'Opening Panel<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>10:00–11:30 AM', <span class="Apple-converted-space">    </span>title:'Population Behavioral &amp; Mental Health' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:2, day:1, label:'Session 1a<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>12:00–1:30 PM', <span class="Apple-converted-space">        </span>title:"Implementation of California's Behavioral Health Transformation" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:3, day:1, label:'Session 1b<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>12:00–1:30 PM', <span class="Apple-converted-space">        </span>title:'Digital Tools for Loneliness in Special Populations' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:4, day:1, label:'Session 2a<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>1:45–3:15 PM',<span class="Apple-converted-space">          </span>title:'Digital Twins: An Emerging Behavioral Health Tool' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:5, day:1, label:'Session 2b<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>1:45–3:15 PM',<span class="Apple-converted-space">          </span>title:"Strategies for Advancing Women's Health" },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:6, day:1, label:'Innovation Spotlight<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>3:30–4:45 PM',title:'Innovations That Could Close a Gap' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:7, day:2, label:'Opening Plenary<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>9:00–9:50 AM', <span class="Apple-converted-space">    </span>title:'Sticky Issues in Technology for Health Equity' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:8, day:2, label:'Session 3a<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>10:00–11:30 AM',<span class="Apple-converted-space">        </span>title:'What Will It Take to Scale Equitable Solutions?' },</p>
+<p class="p1"><span class="Apple-converted-space">  </span>{ index:9, day:2, label:'Session 3b<span class="Apple-converted-space">  </span>|<span class="Apple-converted-space">  </span>10:00–11:30 AM',<span class="Apple-converted-space">        </span>title:"Preparing Tomorrow's Workforce, Today" }</p>
+<p class="p1">];</p>
+<p class="p2"><br></p>
+<p class="p1">// ── State ──────────────────────────────────────────────────────────────────</p>
+<p class="p1">const TOTAL_FIXED_STEPS = 9; // steps 0-8 exist in HTML (0-3 fixed, 4-6 session evals, 7-8 wrap+thanks)</p>
+<p class="p1">let stepSequence = [0, 1, 2, 3]; // built out after session selection</p>
+<p class="p1">let currentPos <span class="Apple-converted-space">  </span>= 0;<span class="Apple-converted-space">            </span>// index into stepSequence</p>
+<p class="p1">let evalSessions = []; <span class="Apple-converted-space">          </span>// sessions chosen for evaluation</p>
+<p class="p1">let submitted<span class="Apple-converted-space">    </span>= false;</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Utility: shuffle array in place ───────────────────────────────────────</p>
+<p class="p1">function shuffle(arr) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>for (let i = arr.length - 1; i &gt; 0; i--) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const j = Math.floor(Math.random() * (i + 1));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>[arr[i], arr[j]] = [arr[j], arr[i]];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return arr;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Session Selection Logic ────────────────────────────────────────────────</p>
+<p class="p1">// Rules:</p>
+<p class="p1">// <span class="Apple-converted-space">  </span>≤ 3 attended<span class="Apple-converted-space">  </span>→ evaluate all of them</p>
+<p class="p1">// <span class="Apple-converted-space">  </span>&gt; 3 attended<span class="Apple-converted-space">  </span>→ pick exactly 3, guaranteeing ≥1 Day 2 session if any Day 2 was attended</p>
+<p class="p1">function selectSessions(checkedIndices) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const MAX = 3;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const attended = checkedIndices.map(i =&gt; SESSIONS[i]);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (attended.length &lt;= MAX) return [...attended];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const day1 = shuffle(attended.filter(s =&gt; s.day === 1));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const day2 = shuffle(attended.filter(s =&gt; s.day === 2));</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const selected = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Guarantee at least one Day 2 session when any were attended</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (day2.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>selected.push(day2.shift()); <span class="Apple-converted-space">      </span>// 1 guaranteed Day 2</p>
+<p class="p1"><span class="Apple-converted-space">    </span>while (selected.length &lt; MAX &amp;&amp; day1.length &gt; 0) selected.push(day1.shift());</p>
+<p class="p1"><span class="Apple-converted-space">    </span>while (selected.length &lt; MAX &amp;&amp; day2.length &gt; 0) selected.push(day2.shift());</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>while (selected.length &lt; MAX &amp;&amp; day1.length &gt; 0) selected.push(day1.shift());</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Preserve chronological order for display</p>
+<p class="p1"><span class="Apple-converted-space">  </span>selected.sort((a, b) =&gt; a.index - b.index);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return selected;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Build a session evaluation step ───────────────────────────────────────</p>
+<p class="p1">function buildEvalStep(stepEl, session, num, total) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const dayLabel = 'Day ' + session.day;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>stepEl.innerHTML = `</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="step-title"&gt;Session Feedback (${num} of ${total})&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="session-banner"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sb-num"&gt;${dayLabel} — ${session.label}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="sb-title"&gt;${session.title}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-sq-quality-${num}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Overall quality of this session's content &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Poor&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_quality_${num}" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_quality_${num}" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_quality_${num}" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_quality_${num}" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_quality_${num}" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Excellent&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question" id="q-sq-relevance-${num}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;Relevance to your work or interests &lt;span class="req"&gt;*&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="scale-wrap"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-lo"&gt;Not relevant&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="scale-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_relevance_${num}" value="1"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_relevance_${num}" value="2"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_relevance_${num}" value="3"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_relevance_${num}" value="4"&gt;&lt;span&gt;4&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;label class="scale-btn"&gt;&lt;input type="radio" name="sq_relevance_${num}" value="5"&gt;&lt;span&gt;5&lt;/span&gt;&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="scale-hi"&gt;Highly relevant&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="error-msg"&gt;Please select a rating.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="question"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;label class="q-label"&gt;What was most valuable, or what would you improve about this session?&lt;/label&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;textarea name="sq_feedback_${num}" placeholder="Share your thoughts on this session…"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>`;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Navigation ─────────────────────────────────────────────────────────────</p>
+<p class="p1">function navigate(dir) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const currentStepId = stepSequence[currentPos];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (dir === 1) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Validate before moving forward</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (!validateStep(currentStepId)) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// After step 3: determine which sessions to evaluate and build the sequence</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (currentStepId === 3) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const checkedBoxes = document.querySelectorAll('input[name="sessionsAttended"]:checked');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (checkedBoxes.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('sessions-error').style.display = 'block';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('sessions-error').style.display = 'none';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const checkedIndices = Array.from(checkedBoxes).map(cb =&gt; parseInt(cb.value));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>evalSessions = selectSessions(checkedIndices);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// Build step sequence: 0,1,2,3 + eval steps (4..4+n-1) + 7, 8</p>
+<p class="p1"><span class="Apple-converted-space">      </span>stepSequence = [0, 1, 2, 3];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>evalSessions.forEach((_, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const stepEl = document.getElementById('step-' + (4 + i));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>buildEvalStep(stepEl, evalSessions[i], i + 1, evalSessions.length);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>stepSequence.push(4 + i);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>stepSequence.push(7, 8);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>// If only 1 session, show a brief note</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (evalSessions.length === 1 &amp;&amp; checkedIndices.length &gt; 1) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// (rare edge case — covered by selection logic)</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Last real step before thank-you: submit the form</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (currentStepId === 7) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (!submitted) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>submitForm();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return; // submitForm() will advance to step 8 on success</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Move to next/previous step</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const newPos = currentPos + dir;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (newPos &lt; 0 || newPos &gt;= stepSequence.length) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>showStep(newPos);</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function showStep(pos) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const oldStepId = stepSequence[currentPos];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const newStepId = stepSequence[pos];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('step-' + oldStepId).classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>document.getElementById('step-' + newStepId).classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>currentPos = pos;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>window.scrollTo({ top: 0, behavior: 'smooth' });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>updateNav();</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function updateNav() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const stepId <span class="Apple-converted-space">  </span>= stepSequence[currentPos];</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const isFirst<span class="Apple-converted-space">  </span>= currentPos === 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const isLast <span class="Apple-converted-space">  </span>= currentPos === stepSequence.length - 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const isThanks = stepId === 8;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btnBack<span class="Apple-converted-space">    </span>= document.getElementById('btnBack');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btnNext<span class="Apple-converted-space">    </span>= document.getElementById('btnNext');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const navRow <span class="Apple-converted-space">    </span>= document.getElementById('navRow');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const counter<span class="Apple-converted-space">    </span>= document.getElementById('stepCounter');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const fill <span class="Apple-converted-space">      </span>= document.getElementById('progressFill');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>btnBack.disabled = isFirst || isThanks;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btnNext.style.display = isThanks ? 'none' : 'inline-block';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (stepId === 7) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btnNext.textContent = 'Submit ✓';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btnNext.textContent = 'Next →';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Progress: exclude welcome (0) and thanks (8) from displayed count</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const totalVisible = stepSequence.length - 2; // minus welcome and thanks</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const curVisible <span class="Apple-converted-space">  </span>= Math.max(0, currentPos - 1); // pos 1 = step 1 = "1 of N"</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const pct = isThanks ? 100 : Math.round((curVisible / totalVisible) * 100);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>fill.style.width = pct + '%';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!isFirst &amp;&amp; !isThanks) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>counter.textContent = curVisible + ' of ' + totalVisible;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>counter.textContent = '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Validation ─────────────────────────────────────────────────────────────</p>
+<p class="p1">function validateStep(stepId) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>let valid = true;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (stepId === 1) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('daysAttended', 'q-days') &amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (stepId === 2) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('overallRating', <span class="Apple-converted-space">  </span>'q-overall')<span class="Apple-converted-space">    </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('relevanceRating', 'q-relevance')<span class="Apple-converted-space">  </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('equityRating',<span class="Apple-converted-space">    </span>'q-equity') <span class="Apple-converted-space">    </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('diversityRating', 'q-diversity')<span class="Apple-converted-space">  </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('orgRating', <span class="Apple-converted-space">      </span>'q-org')<span class="Apple-converted-space">        </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('wouldRecommend',<span class="Apple-converted-space">  </span>'q-recommend')<span class="Apple-converted-space">  </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('wouldAttendAgain','q-attendagain') &amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Eval steps 4-6: validate required ratings</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (stepId &gt;= 4 &amp;&amp; stepId &lt;= 6) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const n = stepId - 3; // 1, 2, or 3</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('sq_quality_' + n, <span class="Apple-converted-space">  </span>'q-sq-quality-' + n) <span class="Apple-converted-space">  </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('sq_relevance_' + n, 'q-sq-relevance-' + n) &amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (stepId === 7) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valid = requireRadio('crossSectorConnection', 'q-crosssector') &amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// If contact panel is visible, validate its required fields</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const panel = document.getElementById('contact-info-panel');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (panel &amp;&amp; panel.style.display !== 'none') {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>valid = requireTextField('contactFirstName') &amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>valid = requireTextField('contactLastName')<span class="Apple-converted-space">  </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>valid = requireTextField('contactOrg') <span class="Apple-converted-space">      </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>valid = requireTextField('contactTitle')<span class="Apple-converted-space">      </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>valid = requireEmailField('contactEmail') <span class="Apple-converted-space">    </span>&amp;&amp; valid;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return valid;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function requireTextField(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!el) return true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (el.value.trim()) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.classList.remove('input-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.add('input-error');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.scrollIntoView({ behavior: 'smooth', block: 'center' });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return false;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function requireEmailField(id) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!el) return true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const val = el.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const valid = val &amp;&amp; /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (valid) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>el.classList.remove('input-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.classList.add('input-error');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>el.scrollIntoView({ behavior: 'smooth', block: 'center' });</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return false;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function requireRadio(name, containerId) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const checked = document.querySelector('input[name="' + name + '"]:checked');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const container = document.getElementById(containerId);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!container) return true; // step not rendered yet</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (checked) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.classList.remove('has-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.classList.add('has-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>container.scrollIntoView({ behavior: 'smooth', block: 'center' });</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return false;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Collect Form Data ──────────────────────────────────────────────────────</p>
+<p class="p1">function collectFormData() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function radio(name) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = document.querySelector('input[name="' + name + '"]:checked');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return el ? el.value : '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function checkboxes(name) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked')).map(e =&gt; e.value);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function textarea(name) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const el = document.querySelector('textarea[name="' + name + '"]');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return el ? el.value.trim() : '';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Which sessions were checked (by attendee)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const attendedIndices = checkboxes('sessionsAttended').map(Number);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const attendedNames <span class="Apple-converted-space">  </span>= attendedIndices.map(i =&gt; 'Day ' + SESSIONS[i].day + ' — ' + SESSIONS[i].label + ': ' + SESSIONS[i].title);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Which sessions were selected for evaluation</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const evalNames = evalSessions.map(s =&gt; 'Day ' + s.day + ' — ' + s.label + ': ' + s.title);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Per-session ratings</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const sessionData = evalSessions.map((s, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const n = i + 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>name:<span class="Apple-converted-space">      </span>'Day ' + s.day + ' — ' + s.label + ': ' + s.title,</p>
+<p class="p1"><span class="Apple-converted-space">      </span>quality: <span class="Apple-converted-space">  </span>radio('sq_quality_' <span class="Apple-converted-space">  </span>+ n),</p>
+<p class="p1"><span class="Apple-converted-space">      </span>relevance: radio('sq_relevance_' + n),</p>
+<p class="p1"><span class="Apple-converted-space">      </span>feedback:<span class="Apple-converted-space">  </span>textarea('sq_feedback_' + n)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>};</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>role:<span class="Apple-converted-space">              </span>radio('role'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>daysAttended:<span class="Apple-converted-space">      </span>radio('daysAttended'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>overallRating: <span class="Apple-converted-space">    </span>radio('overallRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>relevanceRating: <span class="Apple-converted-space">  </span>radio('relevanceRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>equityRating:<span class="Apple-converted-space">      </span>radio('equityRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>diversityRating: <span class="Apple-converted-space">  </span>radio('diversityRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>orgRating: <span class="Apple-converted-space">        </span>radio('orgRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>networkingRating:<span class="Apple-converted-space">  </span>radio('networkingRating'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>valuableAspects: <span class="Apple-converted-space">  </span>checkboxes('valuableAspects'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>wouldRecommend:<span class="Apple-converted-space">    </span>radio('wouldRecommend'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>wouldAttendAgain:<span class="Apple-converted-space">  </span>radio('wouldAttendAgain'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>mostValuable:<span class="Apple-converted-space">      </span>textarea('mostValuable'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>improvements:<span class="Apple-converted-space">      </span>textarea('improvements'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>sessionsAttended:<span class="Apple-converted-space">  </span>attendedNames,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>sessionsEvaluated: evalNames,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>evalSessions:<span class="Apple-converted-space">      </span>sessionData,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>crossSectorConnection: radio('crossSectorConnection'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>finalComments: <span class="Apple-converted-space">        </span>textarea('finalComments'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>howHeard:<span class="Apple-converted-space">              </span>radio('howHeard'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>futureInterests: <span class="Apple-converted-space">      </span>checkboxes('futureInterests'),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>// Contact info (only present if futureInterests were selected)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>contactFirstName: document.getElementById('contactFirstName') ? document.getElementById('contactFirstName').value.trim() : '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>contactLastName:<span class="Apple-converted-space">  </span>document.getElementById('contactLastName')<span class="Apple-converted-space">  </span>? document.getElementById('contactLastName').value.trim()<span class="Apple-converted-space">  </span>: '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>contactOrg: <span class="Apple-converted-space">      </span>document.getElementById('contactOrg') <span class="Apple-converted-space">      </span>? document.getElementById('contactOrg').value.trim() <span class="Apple-converted-space">      </span>: '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>contactTitle: <span class="Apple-converted-space">    </span>document.getElementById('contactTitle')<span class="Apple-converted-space">      </span>? document.getElementById('contactTitle').value.trim()<span class="Apple-converted-space">      </span>: '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>contactEmail: <span class="Apple-converted-space">    </span>document.getElementById('contactEmail')<span class="Apple-converted-space">      </span>? document.getElementById('contactEmail').value.trim()<span class="Apple-converted-space">      </span>: ''</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Submit ─────────────────────────────────────────────────────────────────</p>
+<p class="p1">// Replace YOUR_FORMSPREE_ID below with your actual Formspree form ID</p>
+<p class="p1">// e.g. if your Formspree endpoint is https://formspree.io/f/abcdefgh</p>
+<p class="p1">// then set FORMSPREE_ID = 'abcdefgh'</p>
+<p class="p1">var FORMSPREE_ID = 'mvzwqqqq';</p>
+<p class="p2"><br></p>
+<p class="p1">function flattenData(d) {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function arr(v) { return Array.isArray(v) ? v.join(', ') : (v || ''); }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>function es(i) { return (d.evalSessions || [])[i] || {}; }</p>
+<p class="p1"><span class="Apple-converted-space">  </span>return {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Role':<span class="Apple-converted-space">                        </span>d.role || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Days Attended': <span class="Apple-converted-space">              </span>d.daysAttended || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Overall Rating':<span class="Apple-converted-space">              </span>d.overallRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Content Relevance': <span class="Apple-converted-space">          </span>d.relevanceRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Equity Effectiveness':<span class="Apple-converted-space">        </span>d.equityRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Speaker Diversity': <span class="Apple-converted-space">          </span>d.diversityRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Conference Organization': <span class="Apple-converted-space">    </span>d.orgRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Networking Value':<span class="Apple-converted-space">            </span>d.networkingRating || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Most Valuable Aspects': <span class="Apple-converted-space">      </span>arr(d.valuableAspects),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Would Recommend': <span class="Apple-converted-space">            </span>d.wouldRecommend || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Would Attend Again':<span class="Apple-converted-space">          </span>d.wouldAttendAgain || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Most Valuable Thing': <span class="Apple-converted-space">        </span>d.mostValuable || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Improvement Suggestions': <span class="Apple-converted-space">    </span>d.improvements || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'All Sessions Attended': <span class="Apple-converted-space">      </span>arr(d.sessionsAttended),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Sessions Evaluated':<span class="Apple-converted-space">          </span>arr(d.sessionsEvaluated),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 1 Name':<span class="Apple-converted-space">              </span>es(0).name || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 1 Quality': <span class="Apple-converted-space">          </span>es(0).quality || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 1 Relevance': <span class="Apple-converted-space">        </span>es(0).relevance || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 1 Feedback':<span class="Apple-converted-space">          </span>es(0).feedback || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 2 Name':<span class="Apple-converted-space">              </span>es(1).name || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 2 Quality': <span class="Apple-converted-space">          </span>es(1).quality || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 2 Relevance': <span class="Apple-converted-space">        </span>es(1).relevance || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 2 Feedback':<span class="Apple-converted-space">          </span>es(1).feedback || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 3 Name':<span class="Apple-converted-space">              </span>es(2).name || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 3 Quality': <span class="Apple-converted-space">          </span>es(2).quality || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 3 Relevance': <span class="Apple-converted-space">        </span>es(2).relevance || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Session 3 Feedback':<span class="Apple-converted-space">          </span>es(2).feedback || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Cross-Sector Connection': <span class="Apple-converted-space">    </span>d.crossSectorConnection || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Final Comments':<span class="Apple-converted-space">              </span>d.finalComments || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'How Heard': <span class="Apple-converted-space">                  </span>d.howHeard || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Future Interests':<span class="Apple-converted-space">            </span>arr(d.futureInterests),</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Contact First Name':<span class="Apple-converted-space">          </span>d.contactFirstName || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Contact Last Name': <span class="Apple-converted-space">          </span>d.contactLastName || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Contact Organization':<span class="Apple-converted-space">        </span>d.contactOrg || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Contact Title': <span class="Apple-converted-space">              </span>d.contactTitle || '',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>'Contact Email': <span class="Apple-converted-space">              </span>d.contactEmail || ''</p>
+<p class="p1"><span class="Apple-converted-space">  </span>};</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">function submitForm() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const btnNext = document.getElementById('btnNext');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btnNext.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>btnNext.innerHTML = '&lt;span class="spinner"&gt;&lt;/span&gt;Submitting…';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>const payload = flattenData(collectFormData());</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>fetch('https://formspree.io/f/' + FORMSPREE_ID, {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>method:<span class="Apple-converted-space">  </span>'POST',</p>
+<p class="p1"><span class="Apple-converted-space">    </span>headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body:<span class="Apple-converted-space">    </span>JSON.stringify(payload)</p>
+<p class="p1"><span class="Apple-converted-space">  </span>})</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.then(function(response) { return response.json(); })</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.then(function(result) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if (result.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>submitted = true;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>showStep(currentPos + 1);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>throw new Error(result.error || 'Submission rejected');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>})</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.catch(function(err) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btnNext.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>btnNext.textContent = 'Submit ✓';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>alert('Sorry, there was an error saving your response. Please try again.\n\n' + err.message);</p>
+<p class="p1"><span class="Apple-converted-space">  </span>});</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Contact Panel Show/Hide ────────────────────────────────────────────────</p>
+<p class="p1">function updateContactPanel() {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const anyChecked = document.querySelectorAll('input[name="futureInterests"]:checked').length &gt; 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>const panel = document.getElementById('contact-info-panel');</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!panel) return;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>panel.style.display = anyChecked ? 'block' : 'none';</p>
+<p class="p1"><span class="Apple-converted-space">  </span>// Clear errors when panel is hidden</p>
+<p class="p1"><span class="Apple-converted-space">  </span>if (!anyChecked) {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>['contactFirstName','contactLastName','contactOrg','contactTitle','contactEmail'].forEach(function(id) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>var el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (el) el.classList.remove('input-error');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>});</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">// ── Init ───────────────────────────────────────────────────────────────────</p>
+<p class="p1">updateNav();</p>
+<p class="p2"><br></p>
+<p class="p1">// Wire up interest checkboxes to show/hide contact panel</p>
+<p class="p1">document.getElementById('futureInterests-options').addEventListener('change', updateContactPanel);</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
